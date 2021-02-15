@@ -25,7 +25,7 @@ void PlayScene::draw()
 		GUI_Function();	
 	}
 
-	SDL_SetRenderDrawColor(Renderer::Instance()->getRenderer(), 255, 255, 255, 255);
+	SDL_SetRenderDrawColor(Renderer::Instance()->getRenderer(), 0, 0, 0, 255);
 }
 
 void PlayScene::update()
@@ -85,12 +85,12 @@ void PlayScene::GUI_Function()
 	// See examples by uncommenting the following - also look at imgui_demo.cpp in the IMGUI filter
 	//ImGui::ShowDemoWindow();
 	
-	ImGui::Begin("GAME3001 - Lab 4", NULL, ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoMove);
+	ImGui::Begin("GAME3001 - Lab 4 - Peoples Sean", NULL, ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoMove);
 
 	static bool isGridEnabled = false;
 	if(ImGui::Checkbox("Grid Enabled", &isGridEnabled))
 	{
-		// toggle grid on/off
+		// toggle force field on/off
 		m_setGridEnabled(isGridEnabled);
 	}
 
@@ -108,7 +108,7 @@ void PlayScene::GUI_Function()
 		m_pTarget->getTransform()->position = m_getTile(targetPosition[0], targetPosition[1])->getTransform()->position + offset;
 		m_pTarget->setGridPosition(targetPosition[0], targetPosition[1]);
 		m_computeTileCosts();
-		SDL_SetRenderDrawColor(Renderer::Instance()->getRenderer(), 255, 255, 255, 255);
+		SDL_SetRenderDrawColor(Renderer::Instance()->getRenderer(), 0, 0, 0, 255);
 		SDL_RenderPresent(Renderer::Instance()->getRenderer());
 	}
 	
