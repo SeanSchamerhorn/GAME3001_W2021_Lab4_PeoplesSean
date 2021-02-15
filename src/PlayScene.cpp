@@ -25,7 +25,7 @@ void PlayScene::draw()
 		GUI_Function();	
 	}
 
-	SDL_SetRenderDrawColor(Renderer::Instance()->getRenderer(), 0, 0, 0, 255);
+	SDL_SetRenderDrawColor(Renderer::Instance()->getRenderer(), 255, 255, 255, 255);
 }
 
 void PlayScene::update()
@@ -108,7 +108,7 @@ void PlayScene::GUI_Function()
 		m_pTarget->getTransform()->position = m_getTile(targetPosition[0], targetPosition[1])->getTransform()->position + offset;
 		m_pTarget->setGridPosition(targetPosition[0], targetPosition[1]);
 		m_computeTileCosts();
-		SDL_SetRenderDrawColor(Renderer::Instance()->getRenderer(), 0, 0, 0, 255);
+		SDL_SetRenderDrawColor(Renderer::Instance()->getRenderer(), 255, 255, 255, 255);
 		SDL_RenderPresent(Renderer::Instance()->getRenderer());
 	}
 	
